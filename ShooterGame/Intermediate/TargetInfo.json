@@ -1,0 +1,14 @@
+{
+	"Targets": [
+		{
+			"Name": "ShooterGame",
+			"Path": "D:\\OUTSCAL\\UnrealProjects\\ShooterGame\\Source\\ShooterGame.Target.cs",
+			"Type": "Game"
+		},
+		{
+			"Name": "ShooterGameEditor",
+			"Path": "D:\\OUTSCAL\\UnrealProjects\\ShooterGame\\Source\\ShooterGameEditor.Target.cs",
+			"Type": "Editor"
+		}
+	]
+}

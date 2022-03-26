@@ -1,0 +1,2 @@
+D:\OUTSCAL\UnrealProjects\ShooterGame\Intermediate\Build\Win64\UE4Editor\Development\ShooterGame\Definitions.ShooterGame.h
+D:\OUTSCAL\UnrealProjects\ShooterGame\Source\ShooterGame\ShooterGame.h

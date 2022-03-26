@@ -1,0 +1,8 @@
+{
+	"SourceFiles": [
+		"D:\\OUTSCAL\\UnrealProjects\\ShooterGame\\Source\\ShooterGame\\ShooterGame.Build.cs",
+		"D:\\OUTSCAL\\UnrealProjects\\ShooterGame\\Source\\ShooterGame.Target.cs",
+		"D:\\OUTSCAL\\UnrealProjects\\ShooterGame\\Source\\ShooterGameEditor.Target.cs"
+	],
+	"EngineVersion": "4.27.1"
+}
