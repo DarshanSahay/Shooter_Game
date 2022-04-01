@@ -8,23 +8,30 @@
 #include "UObject/ScriptMacros.h"
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
+class UPrimitiveComponent;
+class AActor;
+struct FHitResult;
 #ifdef SHOOTERGAME_CharacterMovement_generated_h
 #error "CharacterMovement.generated.h already included, missing '#pragma once' in CharacterMovement.h"
 #endif
 #define SHOOTERGAME_CharacterMovement_generated_h
 
-#define ShooterGame_Source_ShooterGame_Public_CharacterMovement_h_19_SPARSE_DATA
-#define ShooterGame_Source_ShooterGame_Public_CharacterMovement_h_19_RPC_WRAPPERS \
+#define ShooterGame_Source_ShooterGame_Public_CharacterMovement_h_21_SPARSE_DATA
+#define ShooterGame_Source_ShooterGame_Public_CharacterMovement_h_21_RPC_WRAPPERS \
  \
+	DECLARE_FUNCTION(execOnOverlapBegin); \
+	DECLARE_FUNCTION(execChangeSpeed); \
 	DECLARE_FUNCTION(execFire);
 
 
-#define ShooterGame_Source_ShooterGame_Public_CharacterMovement_h_19_RPC_WRAPPERS_NO_PURE_DECLS \
+#define ShooterGame_Source_ShooterGame_Public_CharacterMovement_h_21_RPC_WRAPPERS_NO_PURE_DECLS \
  \
+	DECLARE_FUNCTION(execOnOverlapBegin); \
+	DECLARE_FUNCTION(execChangeSpeed); \
 	DECLARE_FUNCTION(execFire);
 
 
-#define ShooterGame_Source_ShooterGame_Public_CharacterMovement_h_19_INCLASS_NO_PURE_DECLS \
+#define ShooterGame_Source_ShooterGame_Public_CharacterMovement_h_21_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesACharacterMovement(); \
 	friend struct Z_Construct_UClass_ACharacterMovement_Statics; \
@@ -33,7 +40,7 @@ public: \
 	DECLARE_SERIALIZER(ACharacterMovement)
 
 
-#define ShooterGame_Source_ShooterGame_Public_CharacterMovement_h_19_INCLASS \
+#define ShooterGame_Source_ShooterGame_Public_CharacterMovement_h_21_INCLASS \
 private: \
 	static void StaticRegisterNativesACharacterMovement(); \
 	friend struct Z_Construct_UClass_ACharacterMovement_Statics; \
@@ -42,7 +49,7 @@ public: \
 	DECLARE_SERIALIZER(ACharacterMovement)
 
 
-#define ShooterGame_Source_ShooterGame_Public_CharacterMovement_h_19_STANDARD_CONSTRUCTORS \
+#define ShooterGame_Source_ShooterGame_Public_CharacterMovement_h_21_STANDARD_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API ACharacterMovement(const FObjectInitializer& ObjectInitializer); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(ACharacterMovement) \
@@ -55,7 +62,7 @@ private: \
 public:
 
 
-#define ShooterGame_Source_ShooterGame_Public_CharacterMovement_h_19_ENHANCED_CONSTRUCTORS \
+#define ShooterGame_Source_ShooterGame_Public_CharacterMovement_h_21_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	NO_API ACharacterMovement(ACharacterMovement&&); \
@@ -66,31 +73,31 @@ public: \
 	DEFINE_DEFAULT_CONSTRUCTOR_CALL(ACharacterMovement)
 
 
-#define ShooterGame_Source_ShooterGame_Public_CharacterMovement_h_19_PRIVATE_PROPERTY_OFFSET \
+#define ShooterGame_Source_ShooterGame_Public_CharacterMovement_h_21_PRIVATE_PROPERTY_OFFSET \
 	FORCEINLINE static uint32 __PPO__ProjectileClass() { return STRUCT_OFFSET(ACharacterMovement, ProjectileClass); }
 
 
-#define ShooterGame_Source_ShooterGame_Public_CharacterMovement_h_16_PROLOG
-#define ShooterGame_Source_ShooterGame_Public_CharacterMovement_h_19_GENERATED_BODY_LEGACY \
+#define ShooterGame_Source_ShooterGame_Public_CharacterMovement_h_18_PROLOG
+#define ShooterGame_Source_ShooterGame_Public_CharacterMovement_h_21_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	ShooterGame_Source_ShooterGame_Public_CharacterMovement_h_19_PRIVATE_PROPERTY_OFFSET \
-	ShooterGame_Source_ShooterGame_Public_CharacterMovement_h_19_SPARSE_DATA \
-	ShooterGame_Source_ShooterGame_Public_CharacterMovement_h_19_RPC_WRAPPERS \
-	ShooterGame_Source_ShooterGame_Public_CharacterMovement_h_19_INCLASS \
-	ShooterGame_Source_ShooterGame_Public_CharacterMovement_h_19_STANDARD_CONSTRUCTORS \
+	ShooterGame_Source_ShooterGame_Public_CharacterMovement_h_21_PRIVATE_PROPERTY_OFFSET \
+	ShooterGame_Source_ShooterGame_Public_CharacterMovement_h_21_SPARSE_DATA \
+	ShooterGame_Source_ShooterGame_Public_CharacterMovement_h_21_RPC_WRAPPERS \
+	ShooterGame_Source_ShooterGame_Public_CharacterMovement_h_21_INCLASS \
+	ShooterGame_Source_ShooterGame_Public_CharacterMovement_h_21_STANDARD_CONSTRUCTORS \
 public: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 
-#define ShooterGame_Source_ShooterGame_Public_CharacterMovement_h_19_GENERATED_BODY \
+#define ShooterGame_Source_ShooterGame_Public_CharacterMovement_h_21_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	ShooterGame_Source_ShooterGame_Public_CharacterMovement_h_19_PRIVATE_PROPERTY_OFFSET \
-	ShooterGame_Source_ShooterGame_Public_CharacterMovement_h_19_SPARSE_DATA \
-	ShooterGame_Source_ShooterGame_Public_CharacterMovement_h_19_RPC_WRAPPERS_NO_PURE_DECLS \
-	ShooterGame_Source_ShooterGame_Public_CharacterMovement_h_19_INCLASS_NO_PURE_DECLS \
-	ShooterGame_Source_ShooterGame_Public_CharacterMovement_h_19_ENHANCED_CONSTRUCTORS \
+	ShooterGame_Source_ShooterGame_Public_CharacterMovement_h_21_PRIVATE_PROPERTY_OFFSET \
+	ShooterGame_Source_ShooterGame_Public_CharacterMovement_h_21_SPARSE_DATA \
+	ShooterGame_Source_ShooterGame_Public_CharacterMovement_h_21_RPC_WRAPPERS_NO_PURE_DECLS \
+	ShooterGame_Source_ShooterGame_Public_CharacterMovement_h_21_INCLASS_NO_PURE_DECLS \
+	ShooterGame_Source_ShooterGame_Public_CharacterMovement_h_21_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 

@@ -5,10 +5,12 @@
 #include "CoreMinimal.h"
 #include "Projectile.h"
 #include "GameFramework/Character.h"
+#include "GameFramework/Actor.h"
 #include "Components/InputComponent.h"
 #include "GameFramework/Controller.h"
 #include "GameFramework/CharacterMovementComponent.h"
 #include "GameFramework/SpringArmComponent.h"
+#include "Components/CapsuleComponent.h"
 #include "Camera/CameraComponent.h"
 
 #include "CharacterMovement.generated.h"
@@ -44,7 +46,27 @@ public:
 	UFUNCTION()
 	void Fire();
 
+	UFUNCTION()
+		void ChangeSpeed(float speed);
+
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Gameplay)
 	FVector MuzzleOffset;
 
+	UPROPERTY(VisibleAnywhere, BluePrintReadWrite, Category = Camera)
+		USpringArmComponent* CameraBoom;
+
+	UPROPERTY(VisibleAnywhere, BluePrintReadWrite, Category = Camera)
+		UCameraComponent* FollowCamera;
+
+	UPROPERTY(VisibleAnywhere, Category = "Trigger Capsule")
+		UCapsuleComponent* Capsule;
+
+	UFUNCTION()
+		void OnOverlapBegin(UPrimitiveComponent* OverlappedComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
+
+	float boostTime;
+	bool boostActivated;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Gameplay)
+	bool hasKey;
 };

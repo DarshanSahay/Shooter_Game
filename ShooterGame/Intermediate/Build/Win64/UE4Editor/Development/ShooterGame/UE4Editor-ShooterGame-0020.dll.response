@@ -34,6 +34,7 @@
 /NODEFAULTLIB:"LIBCPD"
 /FUNCTIONPADMIN
 "D:\OUTSCAL\UnrealProjects\ShooterGame\Intermediate\Build\Win64\ShooterGameEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h.obj"
+"D:\OUTSCAL\UnrealProjects\ShooterGame\Intermediate\Build\Win64\UE4Editor\Development\ShooterGame\BP_Projectile.cpp.obj"
 "D:\OUTSCAL\UnrealProjects\ShooterGame\Intermediate\Build\Win64\UE4Editor\Development\ShooterGame\CharacterMovement.cpp.obj"
 "D:\OUTSCAL\UnrealProjects\ShooterGame\Intermediate\Build\Win64\UE4Editor\Development\ShooterGame\CrossHairHUD.cpp.obj"
 "D:\OUTSCAL\UnrealProjects\ShooterGame\Intermediate\Build\Win64\UE4Editor\Development\ShooterGame\HUDCrossHair.cpp.obj"
@@ -41,6 +42,7 @@
 "D:\OUTSCAL\UnrealProjects\ShooterGame\Intermediate\Build\Win64\UE4Editor\Development\ShooterGame\ShooterGame.cpp.obj"
 "D:\OUTSCAL\UnrealProjects\ShooterGame\Intermediate\Build\Win64\UE4Editor\Development\ShooterGame\ShooterGameCharacter.cpp.obj"
 "D:\OUTSCAL\UnrealProjects\ShooterGame\Intermediate\Build\Win64\UE4Editor\Development\ShooterGame\ShooterGameGameMode.cpp.obj"
+"D:\OUTSCAL\UnrealProjects\ShooterGame\Intermediate\Build\Win64\UE4Editor\Development\ShooterGame\BP_Projectile.gen.cpp.obj"
 "D:\OUTSCAL\UnrealProjects\ShooterGame\Intermediate\Build\Win64\UE4Editor\Development\ShooterGame\CharacterMovement.gen.cpp.obj"
 "D:\OUTSCAL\UnrealProjects\ShooterGame\Intermediate\Build\Win64\UE4Editor\Development\ShooterGame\CrossHairHUD.gen.cpp.obj"
 "D:\OUTSCAL\UnrealProjects\ShooterGame\Intermediate\Build\Win64\UE4Editor\Development\ShooterGame\HUDCrossHair.gen.cpp.obj"

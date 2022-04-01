@@ -2,19 +2,14 @@
 
 
 #include "CharacterMovement.h"
+#include "Engine/Engine.h"
 
 // Sets default values
 ACharacterMovement::ACharacterMovement()
 {
  	// Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
-	PrimaryActorTick.bCanEverTick = true;
-
-	UPROPERTY(VisibleAnywhere, BluePrintReadOnly, Category = Camera)
-		USpringArmComponent* CameraBoom;
-
-	UPROPERTY(VisibleAnywhere, BluePrintReadOnly, Category = Camera)
-		UCameraComponent* FollowCamera;
-
+	PrimaryActorTick.bCanEverTick = true;;
+	
 	bUseControllerRotationPitch = false;
 	bUseControllerRotationRoll = false;
 	bUseControllerRotationYaw = false;
@@ -27,14 +22,18 @@ ACharacterMovement::ACharacterMovement()
 	CameraBoom = CreateDefaultSubobject<USpringArmComponent>(TEXT("CameraBoom"));
 	CameraBoom->SetupAttachment(RootComponent);
 
-	CameraBoom->TargetArmLength = 300.0f;
+	CameraBoom->TargetArmLength = 100.0f;
 	CameraBoom->bUsePawnControlRotation = true;
 
 	FollowCamera = CreateDefaultSubobject<UCameraComponent>(TEXT("FollowCamera"));
 	FollowCamera->SetupAttachment(CameraBoom, USpringArmComponent::SocketName);
 
-	FollowCamera->bUsePawnControlRotation = false;
+	Capsule = CreateDefaultSubobject<UCapsuleComponent>(TEXT("Capsule"));
+	Capsule->InitCapsuleSize(55.5, 96.f);
+	Capsule->SetCollisionProfileName(TEXT("Trigger"));
+	Capsule->SetupAttachment(RootComponent);
 
+	FollowCamera->bUsePawnControlRotation = false;
 }
 
 
@@ -42,7 +41,10 @@ ACharacterMovement::ACharacterMovement()
 void ACharacterMovement::BeginPlay()
 {
 	Super::BeginPlay();
-	
+	Capsule->OnComponentBeginOverlap.AddDynamic(this, &ACharacterMovement::OnOverlapBegin);
+	boostTime = 0.0f;
+	boostActivated = false;
+	hasKey = false;
 }
 
 // Called every frame
@@ -50,6 +52,21 @@ void ACharacterMovement::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
+	if(boostActivated)
+	{
+		boostTime = 10.0f;
+		ChangeSpeed(1000.0f);
+		boostActivated = false;
+	}
+	if (boostTime != 0.0f) 
+	{
+		boostTime -= DeltaTime;
+		if (boostTime <= 0.0f)
+		{
+			ChangeSpeed(600.0f);
+			boostTime = 0.0f;
+		}
+	}
 }
 
 // Called to bind functionality to input
@@ -67,6 +84,7 @@ void ACharacterMovement::SetupPlayerInputComponent(UInputComponent* PlayerInputC
 	PlayerInputComponent->BindAxis("MoveRight", this, &ACharacterMovement::MoveRight);
 
 	PlayerInputComponent->BindAction("Fire", IE_Pressed, this, &ACharacterMovement::Fire);
+
 }
 
 void ACharacterMovement::MoveForward(float Axis)
@@ -103,9 +121,7 @@ void ACharacterMovement::Fire()
 			// Transform MuzzleOffset from camera space to world space.
 			FVector MuzzleLocation = CameraLocation + FTransform(CameraRotation).TransformVector(MuzzleOffset);
 
-			// Skew the aim to be slightly upwards.
 			FRotator MuzzleRotation = CameraRotation;
-			MuzzleRotation.Pitch += 10.0f;
 
 			UWorld* World = GetWorld();
 			if (World)
@@ -124,6 +140,19 @@ void ACharacterMovement::Fire()
 				}
 			}
 		}
+}
+
+void ACharacterMovement::ChangeSpeed(float speed)
+{
+	GetCharacterMovement()->MaxWalkSpeed = speed;
+	GEngine->AddOnScreenDebugMessage(-1, 1.f, FColor::Green, "Changed Speed");
+}
+void ACharacterMovement::OnOverlapBegin(UPrimitiveComponent* OverlappedComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
+{
+	if ((OtherActor != this) && OtherActor && OtherComp) 
+	{
+
+	}
 }
 
 

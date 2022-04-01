@@ -3,7 +3,7 @@
   <ItemGroup>
     <None Include="..\..\ShooterGame.uproject" />
     <Filter Include="Source">
-      <UniqueIdentifier>{F29D6F58-31A6-467A-B02C-46FF74B7D3C6}</UniqueIdentifier>
+      <UniqueIdentifier>{7F9B94B4-125B-42B0-A0DD-C96618B74648}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\ShooterGame.Target.cs">
       <Filter>Source</Filter>
@@ -12,7 +12,7 @@
       <Filter>Source</Filter>
     </None>
     <Filter Include="Config">
-      <UniqueIdentifier>{64E26244-F77D-42A3-BE89-F1A12FB7E159}</UniqueIdentifier>
+      <UniqueIdentifier>{8D0E591E-24DC-4DF8-B1A0-FBE9B0FAE29E}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Config\DefaultEditor.ini">
       <Filter>Config</Filter>
@@ -26,11 +26,14 @@
     <None Include="..\..\Config\DefaultGame.ini">
       <Filter>Config</Filter>
     </None>
+    <None Include="..\..\Config\DefaultGameplayTags.ini">
+      <Filter>Config</Filter>
+    </None>
     <None Include="..\..\Config\DefaultInput.ini">
       <Filter>Config</Filter>
     </None>
     <Filter Include="Source\ShooterGame">
-      <UniqueIdentifier>{1F0212FD-5C21-4C8F-97C4-9CEBA64F066D}</UniqueIdentifier>
+      <UniqueIdentifier>{CB7CFA66-1C0E-43B9-82A5-AD5C4FF46002}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\ShooterGame\ShooterGame.Build.cs">
       <Filter>Source\ShooterGame</Filter>
@@ -54,12 +57,18 @@
       <Filter>Source\ShooterGame</Filter>
     </ClInclude>
     <Filter Include="Source\ShooterGame\Private">
-      <UniqueIdentifier>{241F87EA-75F2-446F-A8F9-917345EC91FE}</UniqueIdentifier>
+      <UniqueIdentifier>{7C41ED49-0178-4675-8D08-20637630684E}</UniqueIdentifier>
     </Filter>
     <ClCompile Include="..\..\Source\ShooterGame\Private\CharacterMovement.cpp">
       <Filter>Source\ShooterGame\Private</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\ShooterGame\Private\CrossHairHUD.cpp">
+      <Filter>Source\ShooterGame\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\ShooterGame\Private\DoorKey.cpp">
+      <Filter>Source\ShooterGame\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\ShooterGame\Private\DoorToUnlock.cpp">
       <Filter>Source\ShooterGame\Private</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\ShooterGame\Private\HUDCrossHair.cpp">
@@ -68,8 +77,11 @@
     <ClCompile Include="..\..\Source\ShooterGame\Private\Projectile.cpp">
       <Filter>Source\ShooterGame\Private</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\ShooterGame\Private\SpeedBooster.cpp">
+      <Filter>Source\ShooterGame\Private</Filter>
+    </ClCompile>
     <Filter Include="Source\ShooterGame\Public">
-      <UniqueIdentifier>{84549D86-653D-4550-9338-B266D3EB29FA}</UniqueIdentifier>
+      <UniqueIdentifier>{7E7ABCE1-2DD3-4D95-8950-E2F0BEA8BA5D}</UniqueIdentifier>
     </Filter>
     <ClInclude Include="..\..\Source\ShooterGame\Public\CharacterMovement.h">
       <Filter>Source\ShooterGame\Public</Filter>
@@ -77,10 +89,19 @@
     <ClInclude Include="..\..\Source\ShooterGame\Public\CrossHairHUD.h">
       <Filter>Source\ShooterGame\Public</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\Source\ShooterGame\Public\DoorKey.h">
+      <Filter>Source\ShooterGame\Public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\ShooterGame\Public\DoorToUnlock.h">
+      <Filter>Source\ShooterGame\Public</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\Source\ShooterGame\Public\HUDCrossHair.h">
       <Filter>Source\ShooterGame\Public</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\ShooterGame\Public\Projectile.h">
+      <Filter>Source\ShooterGame\Public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\ShooterGame\Public\SpeedBooster.h">
       <Filter>Source\ShooterGame\Public</Filter>
     </ClInclude>
   </ItemGroup>
